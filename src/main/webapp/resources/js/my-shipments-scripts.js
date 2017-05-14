@@ -320,10 +320,8 @@ function updateShipment(shipment) {
         select.append("<option value='" + value.id + "'>" + value.id + " - " + value.description + "</option>");
     });
 
-    // TODO: Add new pallets until shipment's quantity is reached
-
     // Load data for combo: pallets
-    $.get("getPallets", function(data, status){
+    $.get("../Pallets/getPallets", function(data, status){
         allPalletList = data.palletList;
     });
 
