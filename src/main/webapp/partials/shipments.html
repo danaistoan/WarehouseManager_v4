@@ -1,0 +1,29 @@
+<a ui-sref="newShipment" class="btn-primary btn-lg nodecoration">Add New Shipment</a>
+<table class="table shipmenttable">
+    <tr>
+        <td><h3>All Shipments</h3></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>Id</td>
+        <td>Customer name</td>
+        <td>Quantity</td>
+        <td>Completed</td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr ng-repeat="shipment in shipments">
+        <td>{{shipment.id}}</td>
+        <td>{{shipment.plannedShipment.customerName}}</td>
+        <td>{{shipment.plannedShipment.quantity}}</td>
+        <td>{{shipment.completed}}</td>
+        <td>
+            <a class="btn btn-primary" ui-sref="viewShipment({id:shipment.id})">View</a>
+            <a class="btn btn-danger"  ng-click="deleteShipment(shipment)">Delete</a>
+        </td>
+    </tr>
+</table>

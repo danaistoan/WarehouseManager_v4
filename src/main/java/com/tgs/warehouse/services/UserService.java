@@ -32,4 +32,15 @@ public class UserService {
         }
         return user;
     }
+
+    public User processLogin(User user){
+
+        User foundUser = userDAO.searchUser(user.getUsername());
+
+        if(foundUser == null || !foundUser.getPassword().equals(user.getPassword())){
+            System.out.println("User not found! Wrong username or password");
+            return null;
+        }
+        return foundUser;
+    }
 }

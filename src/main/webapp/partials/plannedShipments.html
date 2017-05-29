@@ -1,0 +1,16 @@
+<a ui-sref="newPlannedShipment" class="btn-primary btn-lg nodecoration">Add New Planned Shipment</a>
+<table class="table plannedShipmenttable">
+    <tr>
+        <td><h3>All Planned Shipments</h3></td>
+        <td></td>
+    </tr>
+    <tr ng-repeat="plannedShipment in plannedShipments">
+        <td>{{plannedShipment.id}}</td>
+        <td>{{plannedShipment.customerName}}</td>
+        <td>{{plannedShipment.quantity}}</td>
+        <td>
+            <a class="btn btn-primary" ui-sref="viewPlannedShipment({id:plannedShipment.id})">View</a>
+            <a class="btn btn-danger"  ng-click="deletePlannedShipment(plannedShipment)">Delete</a>
+        </td>
+    </tr>
+</table>

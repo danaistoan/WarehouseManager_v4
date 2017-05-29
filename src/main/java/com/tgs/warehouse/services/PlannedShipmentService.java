@@ -30,10 +30,10 @@ public class PlannedShipmentService {
     }
 
     // Search Planned Shipment by customer name
-    public List<PlannedShipment> searchPlannedShipments(String customerName) {
+    public PlannedShipment getPlannedShipment(Long id) {
 
-        List<PlannedShipment> resultPlannedShipments = plannedShipmentDAO.searchPlannedShipments(customerName);
-        return resultPlannedShipments;
+        PlannedShipment resultPlannedShipment = plannedShipmentDAO.getPlannedShipment(id);
+        return resultPlannedShipment;
     }
 
     // Retrieve all Planned Shipments from DB

@@ -45,6 +45,16 @@ public class PlannedShipmentDAO {
     }
 
     @Transactional
+    public PlannedShipment getPlannedShipment(Long id) {
+
+        Session session = sessionFactory.getCurrentSession();
+        PlannedShipment plannedShipment = session.get(PlannedShipment.class, id);
+        System.out.println("SearchPlanneShipments with Hibernate executed");
+
+        return plannedShipment;
+    }
+
+    @Transactional
     public List<PlannedShipment> searchPlannedShipments(String customerName) {
 
         Session session = sessionFactory.getCurrentSession();

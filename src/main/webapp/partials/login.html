@@ -1,0 +1,27 @@
+<h2 style="text-align:center;">Login</h2>
+
+<!--<div class="loginFailure" style="text-align: center;">Invalid username or password</div>-->
+
+<form class="form-horizontal" role="form" ng-submit="login()">
+    <div class="form-group">
+        <label for="username" class="col-sm-3 control-label">Username</label>
+        <div class="col-sm-3">
+            <!--Bind the input DOM element to the attribute on the $scope with ng-model -->
+            <input type="text" ng-model="user.username" class="form-control" id="username" placeholder="Your username here"/>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="password" class="col-sm-3 control-label">Password</label>
+        <div class="col-sm-3">
+            <!--Bind the input DOM element to the attribute on the $scope with ng-model -->
+            <input type="password" ng-model="user.password" class="form-control" id="password" placeholder="Your password here"/>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-sm-offset-3 col-sm-3">
+            <button class="btn btn-primary" ng-click="login()">Login</button>
+            <button class="btn btn-primary" ng-click="cancel()">Cancel</button>
+        </div>
+    </div>
+
+</form>

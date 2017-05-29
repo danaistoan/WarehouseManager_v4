@@ -1,0 +1,15 @@
+<a ui-sref="newPallet" class="btn-primary btn-lg nodecoration">Add New Pallet</a>
+<table class="table pallettable">
+    <tr>
+        <td><h3>All Pallets</h3></td>
+        <td></td>
+    </tr>
+    <tr ng-repeat="pallet in pallets">
+        <td>{{pallet.id}}</td>
+        <td>{{pallet.description}}</td>
+        <td>
+            <a class="btn btn-primary" ui-sref="viewPallet({id:pallet.id})">View</a>
+            <a class="btn btn-danger"  ng-click="deletePallet(pallet)">Delete</a>
+        </td>
+    </tr>
+</table>

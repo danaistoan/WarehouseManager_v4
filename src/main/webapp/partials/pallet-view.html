@@ -1,0 +1,19 @@
+<table class="table pallettable">
+    <tr>
+        <td><h3>Packages for pallet with id no.{{pallet.id}}</h3></td>
+    </tr>
+    <tr>
+        <td>Id</td>
+        <td>Description</td>
+        <td>Type</td>
+    </tr>
+    <tr ng-repeat="package in packages">
+        <td>{{package.id}}</td>
+        <td>{{package.description}}</td>
+        <td>{{package.type}}</td>
+    </tr>
+</table>
+<div>
+    <a class="btn btn-primary" ui-sref="editPallet({id:pallet.id})">Edit</a>
+    <button class="btn btn-primary" ng-click="cancel()">Cancel</button>
+</div>

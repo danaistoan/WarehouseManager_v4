@@ -1,0 +1,26 @@
+<table class="table plannedShipmenttable">
+    <tr>
+        <td><h3>Details for planned shipment with id no.{{shipment.id}}</h3></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>Planned shipment id</td>
+        <td>{{plannedShipment.id}}</td>
+    </tr>
+    <tr>
+        <td>Customer name</td>
+        <td>{{plannedShipment.customerName}}</td>
+    </tr>
+    <tr>
+        <td>Quantity</td>
+        <td>{{plannedShipment.quantity}}</td>
+    </tr>
+    <tr>
+        <td>Status</td>
+        <td>{{shipment.completed}}</td>
+    </tr>
+</table>
+<div>
+    <a class="btn btn-primary" ui-sref="editPlannedShipment({id:plannedShipment.id})">Edit</a>
+    <button class="btn btn-primary" ng-click="cancel()">Cancel</button>
+</div>

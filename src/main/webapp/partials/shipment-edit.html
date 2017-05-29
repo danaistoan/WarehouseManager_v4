@@ -1,0 +1,52 @@
+<form class="form-horizontal" role="form">
+    <table class="table shipmenttable">
+        <tr>
+            <td><h3>Details for shipment with id no.{{shipment.id}}</h3></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Planned shipment id</td>
+            <td>{{shipment.plannedShipment.id}}</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Customer name</td>
+            <td>{{shipment.plannedShipment.customerName}}</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Quantity</td>
+            <td>{{shipment.plannedShipment.quantity}}</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Completed</td>
+            <td>{{shipment.completed}}</td>
+            <td></td>
+        </tr>
+        <tr ng-repeat="pallet in shipment.productPalletList">
+            <td>Pallet {{$index + 1}}</td>
+            <td>{{pallet.id}} - {{pallet.description}}</td>
+            <td><button id="{{pallet.id}}" class="btn btn-danger" ng-click="removePallet($event)">Remove</button></td>
+        </tr>
+    </table>
+
+    <div ng-repeat="pallet in newProductPalletList">
+        <label for="pallet" class="col-sm-2 control-label">Pallet</label>
+        <div class="col-sm-10">
+            <select name="pallet" id="pallet"
+                    ng-options="pallet.id as pallet.id + ' - ' + pallet.description for pallet in unshippedProductPalletList"
+                    ng-model="newProductPalletList[$index].id">
+            </select>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+            <button class="btn btn-primary" ng-click="addPallet()">Add new pallet</button>
+            <button class="btn btn-primary" ng-click="saveShipment()">Save</button>
+            <button class="btn btn-primary" ng-click="cancel()">Cancel</button>
+        </div>
+    </div>
+</form>
